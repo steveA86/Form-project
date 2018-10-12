@@ -1,0 +1,116 @@
+<!doctype <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CONTACT FORM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+
+        .container {
+            width: 80%;
+            border-radius: 5px;
+            background-color: #ecee8e;
+            padding: 20px;
+            text-decoration: black;
+            font-weight: bold;
+             }
+        input[type=text], input[type=email] , select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+            
+            }
+        .lbl{
+            padding: 10px;
+            background: rgb(11, 53, 12); 
+            display: table;
+            color: #fff;
+            cursor: pointer;
+            }
+
+        input[type="file"] {
+            display: none;
+        }
+        fieldset {
+            width: 50%;
+            padding: 12px;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+            }
+
+        input[type=submit] {
+            background-color: rgb(11, 53, 12);
+            color: white;
+            padding: 12px 20px;
+            border: 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            }
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+        h1{
+            text-align:center;
+            padding: 12px 20px;
+            border: 20px;
+            border-radius: 4px;
+        }
+        body{
+            background-color: powderblue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Contact Information</h1>
+    <div class="container">
+        <form action="/syrveys/submitSyrvey.php" method="post">
+            <input type="hidden" name="csrf_token" value="545jk5fd_42">
+            <label for="f_name">First Name</label>
+            <input type="text" id="f_name" name="f_name" placeholder="Your first name">
+            <label for="l_name">Last Name</label>
+            <input type="text" id="l_name" name="l_name" placeholder="Your last name">
+            <label for="email">E-Mail</label>
+            <input type="email" id="email" name="email" placeholder="Your email"><br>
+            <label for="Age">Age</label>
+            <select id="Age" name="age_range">
+                <option value="<18">less than 18</option>
+                <option value="18-25">between 18 and 25</option>
+                <option value=">25">over 25</option>
+            </select>
+            <label for="projectdes">Project Description</label>
+            <textarea id="projectdes" name="project_description" placeholder="Write about your project.."></textarea>
+            <label for="screenshot" id="scrshot" class="lbl">Upload a screenshot of your project</label>
+            <input type="file" id="screenshot" name="project_screenshot" accept="image/*">
+            <fieldset>
+                <legend>Is the project done</legend>
+
+                <div>
+                    <input type="radio" id="Yes" name="project_done" value="Yes" checked />
+                    <label for="Yes">Yes</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="No" name="project_done" value="No" checked />
+                    <label for="No">No</label>
+                </div>
+            </fieldset>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+
+</body>
+
+</html>
